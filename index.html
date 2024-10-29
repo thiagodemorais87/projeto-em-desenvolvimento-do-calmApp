@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalmApp</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Tela de Carregamento -->
+    <div class="screen loading-screen" id="loading-screen">
+      <img src="file:///C:/Users/xaful/Downloads/1fdbf807-8879-4711-8fdd-6e505c9b3359.png" alt="CalmApp Logo" class="logo">
+      <p>Carregando...</p>
+    </div>
+
+    <!-- Tela de Login -->
+    <div class="screen login-screen" id="login-screen">
+      <h1>CalmApp</h1>
+      <form id="login-form">
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit">Acessar</button>
+      </form>
+      <p><a href="#" onclick="showScreen('signup-screen')">Criar uma nova conta</a></p>
+    </div>
+
+    <!-- Tela de Cadastro -->
+    <div class="screen signup-screen" id="signup-screen" style="display: none;">
+      <h1>CalmApp</h1>
+      <form id="signup-form">
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" placeholder="Senha" required>
+        <input type="password" placeholder="Confirme a Senha" required>
+        <input type="tel" placeholder="Número de Telefone" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+      <p><a href="#" onclick="showScreen('login-screen')">Já tenho uma conta</a></p>
+    </div>
+
+    <!-- Tela Principal -->
+    <div class="screen main-screen" id="main-screen" style="display: none;">
+      <header>
+        <h1>CalmApp</h1>
+        <nav>
+          <button onclick="showScreen('clinics-screen')">Clínicas</button>
+          <button onclick="showScreen('medicos-screen')">Médicos</button>
+          <button onclick="showScreen('reservas-screen')">Minhas Reservas</button>
+        </nav>
+      </header>
+      <div id="content">
+        <!-- Conteúdo das seções vai aqui -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
